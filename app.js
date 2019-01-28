@@ -11,10 +11,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('*', function(req, res){
-    fs.readFile(__dirname + '/views/404.html', function(error, file){
-        res.set('Content-Type', 'text/html');
-        res.send(file);
-    });
+    res.sendFile(__dirname + '/views/404.html');
 });
 
 //

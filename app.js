@@ -1,9 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const app = express();
 const port = process.env.PORT;
 
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
 const MongoClient = require('mongodb').MongoClient;
@@ -26,7 +27,12 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/guestbook', (req, res) => {
-    res.sendFile(__dirname + '/views/guestbook.html');
+    db.collection('guests').find().toArray((err, result) => {
+        if (err) {
+            return console.log(err);
+        }
+        res.render('guestbook.ejs', {guests: result})
+    })
 });
 
 app.get('/thanks', (req, res) => {

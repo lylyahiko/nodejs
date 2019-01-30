@@ -22,10 +22,9 @@
     </div>
     <br/>
     <div class="jumbotron"> <p style="text-align:center">
-        Please sign into my guest book so I know you visited.
-    </p></div>
+            Please sign into my guest book so I know you visited.
+        </p></div>
     <div style="text-align: center">
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-3"></div>
@@ -49,6 +48,25 @@
                 <div class="col-sm-3"></div>
             </div>
         </div>
+    </div>
+<br>
+    <div class="col-sm-12" style="text-align:center">
+        <h2>People who signed my guestbook!</h2>
+    </div>
+    <div class="col-sm-12" style="text-align:center">
+        <% for(var i=0; i<guests.length; i++) {%>
+            <div class="col-sm-6">
+                <div class="well">
+                    <div>
+                        <span><%= guests[i].firstName %></span>
+                        <span><%= guests[i].lastName %></span>
+                    </div>
+                    <div>
+                        <span><%= guests[i].comments %></span>
+                    </div>
+                </div>
+            </div>
+        <% } %>
     </div>
 </div>
 </body>

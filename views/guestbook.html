@@ -15,7 +15,7 @@
         <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
             <ul class="nav navbar-nav">
                 <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
-                <li><a href="/about">About us</a></li>
+                <li><a href="/about">About Me</a></li>
                 <li class="active"><a href="/guestbook">Guest Book</a></li>
             </ul>
         </nav>
@@ -30,18 +30,18 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <form method="post" action="/addname">
+                    <form method="POST" action="/addname">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name...">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name...">
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name...">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name...">
                         </div>
                         <div class="form-group">
                             <label for="comments">Comments</label>
-                            <textarea class="form-control" id="comments" placeholder="Enter a comment..."></textarea>
+                            <textarea class="form-control" id="comments" name="comments" placeholder="Enter a comment..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -50,6 +50,6 @@ app.post("/addname", (req, res) => {
     })
 });
 
-app.get('*', function(req, res){
-    res.sendFile(__dirname + '/views/404.html');
-});
+// app.get('*', function(req, res){
+//     res.sendFile(__dirname + '/views/404.html');
+// });

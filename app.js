@@ -6,7 +6,7 @@ const port = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use("/images", express.static(__dirname + '/images'));
 const MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect(process.env.DB_URL, (err, client) => {
